@@ -1,0 +1,344 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap");
+
+body {
+  font-family: "Outfit", sans-serif;
+  /* background: rgb(66, 66, 66);
+  background: linear-gradient(
+    90deg,
+    rgba(66, 66, 66, 1) 0%,
+    rgba(124, 124, 124, 1) 50%,
+    rgba(66, 66, 66, 1) 100%
+  ); */
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1440px;
+}
+
+.container-form {
+  max-width: 400px;
+  margin: 100px auto;
+}
+.container-form2 {
+  max-width: 400px;
+  margin: 100px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+h6 {
+  font-size: 30px;
+}
+/* ----------- HEADER ---------------*/
+
+header img {
+  height: 50px;
+}
+
+.input_header {
+  color: rgb(128, 95, 247);
+  border: 2px solid rgb(128, 95, 247);
+  border-radius: 10px;
+  padding: 10px 25px;
+  background: transparent;
+  font-size: 18px;
+  height: 50px;
+  width: 300px;
+}
+
+.input_header:active {
+  box-shadow: 2px 2px 15px rgb(128, 95, 247) inset;
+}
+
+header {
+  display: flex;
+  height: 90px;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Outfit", sans-serif;
+  font-size: 18px;
+}
+
+header div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Outfit", sans-serif;
+  width: 500px;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  width: 500px;
+  justify-content: space-around;
+  font-weight: 700;
+}
+
+header p:hover {
+  font-weight: 700;
+}
+
+header p:after {
+  content: "";
+  display: block;
+  margin: auto;
+  height: 2px;
+  width: 0;
+  transition: width 0.5s ease, background-color 0.5s ease;
+}
+
+header p:hover:after {
+  width: 90%;
+  background: #444;
+}
+.purple {
+  color: rgb(128, 95, 247);
+}
+
+.connect_button {
+  background-color: #333;
+  color: #fff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.connect_button:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  background-color: rgb(128, 95, 247);
+}
+
+.connect_button:active {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+.disconect_button {
+  background-color: #d11c1c;
+  color: #fff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.disconect_button:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  background-color: rgb(0, 0, 0);
+}
+
+.disconect_button:active {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/*---------- HOME ------------------*/
+main h1 {
+  font-size: 40px;
+  margin-top: 100px;
+  font-weight: 700;
+}
+
+main h2 {
+  font-size: 20px;
+  margin-top: 10px;
+  font-weight: 400;
+  max-width: 500px;
+}
+main h3 {
+  font-size: 20px;
+  margin-top: 10px;
+  font-weight: 400;
+  max-width: 500px;
+  margin-top: 50px;
+  color: white;
+}
+
+main section {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+}
+main div {
+  display: flex;
+  justify-content: center;
+  border-radius: 20px;
+  margin-top: 10px;
+}
+.for-cut {
+  display: flex;
+  width: 280px;
+  height: 240px;
+  overflow: hidden;
+}
+main img {
+  height: 460px;
+  width: 300px;
+  border-radius: 30px;
+  object-fit: cover;
+}
+
+/*--------- CARD-HOME ------*/
+.card-home {
+  width: 300px;
+  height: 400px;
+  border-radius: 30px;
+  background: #212121;
+  box-shadow: 15px 15px 30px rgb(25, 25, 25), -15px -15px 30px rgb(60, 60, 60);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.card-home:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+/*----------LOGIN --------------*/
+.form-box {
+  width: 300px;
+  background: #f1f7fe;
+  overflow: hidden;
+  border-radius: 16px;
+  color: #010101;
+}
+
+.form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 32px 24px 24px;
+  gap: 16px;
+  text-align: center;
+}
+
+.title-box {
+  font-family: "Outfit", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  padding-top: 10px;
+  font-weight: 500;
+  font-size: 20px;
+  box-sizing: border-box;
+  margin-bottom: 50px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: #fff;
+  margin: 10px;
+}
+
+.form-container input {
+  outline: none;
+  background: none;
+  border: 0;
+  display: flex;
+  height: 30px;
+  width: 100%;
+  border-bottom: 1px solid #eee;
+  font-size: 15px;
+  padding: 8px 15px;
+}
+
+.form-section {
+  padding: 16px;
+  font-size: 13px;
+  background-color: #e0ecfb;
+}
+
+.form-section a {
+  font-weight: bold;
+  color: rgb(128, 95, 247);
+}
+
+.form-section a:hover {
+  color: rgb(128, 95, 247);
+  text-decoration: underline;
+}
+
+.send-button {
+  display: flex;
+  background-color: rgb(128, 95, 247);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  padding: 10px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.send-button:hover {
+  opacity: 80%;
+}
+
+.button-transform {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+}
+
+.send-button:hover {
+  background-color: rgb(128, 95, 247);
+}
+
+div .form-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  padding: 10px;
+}
+/*-------FOOTER--------*/
+
+footer {
+  background: #313131;
+  color: white;
+  margin-top: auto;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  font-size: 18px;
+}
+
+footer a {
+  color: white;
+  font-weight: 700;
+}
+
+footer a:hover {
+  color: rgb(128, 95, 247);
+}
+footer div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+footer img {
+  height: 100px;
+}
