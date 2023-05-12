@@ -15,7 +15,7 @@ const Character = () => {
           `https://site--marvel--x89fgb8wnx9j.code.run/character/${id}`
         );
         setData(response.data);
-        console.log(data);
+        console.log(response.data);
         setIsLoading(false);
       } catch (error) {
         console.log(error.message);
@@ -24,7 +24,24 @@ const Character = () => {
     fetchData();
   }, [id]);
 
-  return isLoading ? <div className="spinner container-form"></div> : <p>OK</p>;
+  return isLoading ? (
+    <div className="spinner container-form"></div>
+  ) : (
+    <div className="container character-page">
+      <div>
+        <h1 className="title-character">{data.name}</h1>
+        <div className="img-p-character">
+          <img
+            src={data.thumbnail.path + "." + data.thumbnail.extension}
+            alt={data.name}
+          />
+          <div>
+            <p>{data.description}</p>{" "}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Character;
