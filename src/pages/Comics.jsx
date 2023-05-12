@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Pages from "../components/Pages";
+
 const Comics = () => {
   const [title, setTitle] = useState("");
   const [data, setData] = useState();
@@ -53,7 +54,7 @@ const Comics = () => {
                         src={
                           comic.thumbnail.path + "." + comic.thumbnail.extension
                         }
-                        alt={comic.name}
+                        alt={comic.title}
                       />
                     </div>
                     <div className="characters-title-desc">

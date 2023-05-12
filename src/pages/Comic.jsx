@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import ComicCard from "../components/ComicCard";
 
 const Comic = () => {
   const [data, setData] = useState({});
@@ -15,7 +16,6 @@ const Comic = () => {
           `https://site--marvel--x89fgb8wnx9j.code.run/comic/${id}`
         );
         setData(response.data);
-        console.log(response.data);
         setIsLoading(false);
       } catch (error) {
         console.log(error.message);
@@ -27,20 +27,7 @@ const Comic = () => {
   return isLoading ? (
     <div className="spinner container-form"></div>
   ) : (
-    <div className="container character-page">
-      <div>
-        <h1 className="title-character">{data.title}</h1>
-        <div className="img-p-character">
-          <img
-            src={data.thumbnail.path + "." + data.thumbnail.extension}
-            alt={data.title}
-          />
-          <div>
-            <p>{data.description}</p>
-          </div>
-        </div>
-      </div>
-    </div>
+    <ComicCard data={data} />
   );
 };
 

@@ -15,7 +15,7 @@ const Header = ({ handleToken, token, search, setSearch }) => {
           <p>Comics</p>
         </Link>
         <Link to="/characters">
-          <p>Peronnages</p>
+          <p>Personnages</p>
         </Link>
         {token ? (
           <Link to="/favoris">

@@ -28,10 +28,10 @@ function App() {
       <Routes>
         <Route>
           <Route path="/" element={<Home />} />
-          <Route path="/characters" element={<Characters token={token} />} />
-          <Route path="/character/:id" element={<Character token={token} />} />
-          <Route path="/comics" element={<Comics token={token} />} />
-          <Route path="/comic/:id" element={<Comic token={token} />} />
+          <Route path="/characters" element={<Characters />} />
+          <Route path="/character/:id" element={<Character />} />
+          <Route path="/comics" element={<Comics />} />
+          <Route path="/comic/:id" element={<Comic />} />
 
           <Route
             path="/login"

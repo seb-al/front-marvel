@@ -1,17 +1,19 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Pages from "../components/Pages";
 
 const Characters = () => {
   const [name, setName] = useState("");
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
+  const [skip, setSkip] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://site--marvel--x89fgb8wnx9j.code.run/characters?name=${name}`
+          `https://site--marvel--x89fgb8wnx9j.code.run/characters?name=${name}&skip=${skip}`
         );
         setData(response.data);
         setIsLoading(false);
@@ -20,7 +22,7 @@ const Characters = () => {
       }
     };
     fetchData();
-  }, [name]);
+  }, [name, skip]);
 
   return isLoading ? (
     <div className="spinner container-form"></div>
@@ -41,7 +43,9 @@ const Characters = () => {
         {data.results.map((character) => {
           if (
             character.thumbnail.path !==
-            "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available"
+              "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available" &&
+            character.thumbnail.path !==
+              "http://i.annihil.us/u/prod/marvel/i/mg/f/60/4c002e0305708"
           ) {
             return (
               <Link key={character._id} to={`/character/${character._id}`}>
@@ -67,7 +71,10 @@ const Characters = () => {
             return null;
           }
         })}
-      </div>{" "}
+      </div>
+      <div className="container-buttons">
+        <Pages skip={skip} setSkip={setSkip} data={data}></Pages>
+      </div>
     </>
   );
 };
