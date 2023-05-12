@@ -10,10 +10,9 @@ import Comic from "./pages/Comic";
 import Characters from "./pages/Characters";
 import Character from "./pages/Character";
 import Comics from "./pages/Comics";
-// import Footer from "./components/Footer";
+import Footer from "./components/Footer";
 
 function App() {
-  const [search, setSearch] = useState("");
   const [token, setToken] = useState(Cookies.get("userToken") || null);
   const handleToken = (token) => {
     if (token) {
@@ -26,12 +25,7 @@ function App() {
   };
   return (
     <Router>
-      <Header
-        handleToken={handleToken}
-        token={token}
-        setSearch={setSearch}
-        search={search}
-      />
+      <Header handleToken={handleToken} token={token} />
       <Routes>
         <Route>
           <Route path="/" element={<Home />} />

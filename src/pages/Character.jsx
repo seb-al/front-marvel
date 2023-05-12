@@ -27,20 +27,22 @@ const Character = () => {
   return isLoading ? (
     <div className="spinner container-form"></div>
   ) : (
-    <div className="container character-page">
-      <div>
-        <h1 className="title-character">{data.name}</h1>
-        <div className="img-p-character">
-          <img
-            src={data.thumbnail.path + "." + data.thumbnail.extension}
-            alt={data.name}
-          />
-          <div>
-            <p>{data.description}</p>
+    <>
+      <div className="container character-page">
+        <div>
+          <h1 className="title-character">{data.name}</h1>
+          <div className="img-p-character">
+            <img
+              src={data.thumbnail.path + "." + data.thumbnail.extension}
+              alt={data.name}
+            />
+            <div>
+              <p>{data.description}</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
