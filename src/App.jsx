@@ -10,7 +10,6 @@ import Comic from "./pages/Comic";
 import Characters from "./pages/Characters";
 import Character from "./pages/Character";
 import Comics from "./pages/Comics";
-import Footer from "./components/Footer";
 
 function App() {
   const [token, setToken] = useState(Cookies.get("userToken") || null);
@@ -44,7 +43,6 @@ function App() {
           />
         </Route>
       </Routes>
-      {/* <Footer /> */}
     </Router>
   );
 }
