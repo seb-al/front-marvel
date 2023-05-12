@@ -10,6 +10,11 @@ body {
     rgba(66, 66, 66, 1) 100%
   ); */
 }
+input,
+textarea {
+  width: 100%;
+  display: block;
+}
 
 a {
   text-decoration: none;
@@ -41,21 +46,6 @@ h6 {
 
 header img {
   height: 50px;
-}
-
-.input_header {
-  color: rgb(128, 95, 247);
-  border: 2px solid rgb(128, 95, 247);
-  border-radius: 10px;
-  padding: 10px 25px;
-  background: transparent;
-  font-size: 18px;
-  height: 50px;
-  width: 300px;
-}
-
-.input_header:active {
-  box-shadow: 2px 2px 15px rgb(128, 95, 247) inset;
 }
 
 header {
@@ -171,7 +161,9 @@ main h1 span {
 
 main section {
   margin-top: 100px;
+  max-width: 1430px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   justify-content: space-evenly;
 }
@@ -196,6 +188,7 @@ main img {
 
 /*--------- CARD-HOME ------*/
 .card-home {
+  margin-top: 30px;
   width: 300px;
   height: 400px;
   border-radius: 30px;
@@ -242,6 +235,27 @@ main img {
   font-size: 14px;
 }
 
+.search-input {
+  color: rgb(128, 95, 247);
+  border: 2px solid rgb(128, 95, 247);
+  border-radius: 10px;
+  padding: 10px 25px;
+  background: transparent;
+  font-size: 18px;
+  height: 50px;
+  max-width: 499px;
+}
+
+.search-input:active {
+  box-shadow: 2px 2px 15px rgb(128, 95, 247) inset;
+}
+
+.div-search {
+  margin-top: 150px;
+  max-width: 500px;
+  margin-bottom: -80px;
+}
+
 /*----------CARD-CHARACTERS-------*/
 .card-characters {
   margin-top: 60px;
@@ -275,7 +289,7 @@ main img {
   overflow: hidden;
 }
 
-/*----------LOGIN --------------*/
+/*----------LOGIN/SIGNUP --------------*/
 .form-box {
   width: 300px;
   background: #f1f7fe;
