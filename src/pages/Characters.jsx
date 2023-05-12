@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 const Characters = () => {
   const [name, setName] = useState("");
-
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
 

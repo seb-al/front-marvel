@@ -36,7 +36,7 @@ const Character = () => {
             alt={data.name}
           />
           <div>
-            <p>{data.description}</p>{" "}
+            <p>{data.description}</p>
           </div>
         </div>
       </div>

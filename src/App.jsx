@@ -9,6 +9,7 @@ import Signup from "./pages/Signup";
 
 import Characters from "./pages/Characters";
 import Character from "./pages/Character";
+import Comics from "./pages/Comics";
 // import Footer from "./components/Footer";
 
 function App() {
@@ -36,6 +37,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/characters" element={<Characters token={token} />} />
           <Route path="/character/:id" element={<Character token={token} />} />
+          <Route path="/comics" element={<Comics token={token} />} />
+
           <Route
             path="/login"
             element={<Login handleToken={handleToken} token={token} />}
