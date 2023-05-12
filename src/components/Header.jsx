@@ -8,11 +8,6 @@ const Header = ({ handleToken, token, search, setSearch }) => {
         <Link to="/">
           <img src={logo} alt="logo Marvel" />
         </Link>
-        <input
-          type="search"
-          className="input_header"
-          placeholder="Que recherches-tu ?"
-        />
       </div>
 
       <nav>

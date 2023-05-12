@@ -6,7 +6,10 @@ import Home from "./pages/Home";
 import Header from "./components/Header";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-import Footer from "./components/Footer";
+
+import Characters from "./pages/Characters";
+import Character from "./pages/Character";
+// import Footer from "./components/Footer";
 
 function App() {
   const [search, setSearch] = useState("");
@@ -31,6 +34,8 @@ function App() {
       <Routes>
         <Route>
           <Route path="/" element={<Home />} />
+          <Route path="/characters" element={<Characters token={token} />} />
+          <Route path="/character/:id" element={<Character token={token} />} />
           <Route
             path="/login"
             element={<Login handleToken={handleToken} token={token} />}
@@ -41,7 +46,7 @@ function App() {
           />
         </Route>
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </Router>
   );
 }

@@ -5,10 +5,12 @@ import characters from "../assets/img/characters.jpg";
 const Home = () => {
   return (
     <main className="container">
-      <h1>Bienvenue dans l'univers de Marvel !</h1>
+      <h1>
+        Bienvenue dans l'univers de <span>Marvel</span> !
+      </h1>
       <h2>
         Nous avons intégré une API pour vous permettre facilement de retrouver
-        vos comics ainsi ainsi que les vos personnages préférés.
+        vos comics ainsi que vos personnages préférés.
       </h2>
       <section>
         <Link to="/comics">
