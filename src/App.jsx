@@ -10,6 +10,7 @@ import Comic from "./pages/Comic";
 import Characters from "./pages/Characters";
 import Character from "./pages/Character";
 import Comics from "./pages/Comics";
+import Favoris from "./pages/Favoris";
 
 function App() {
   const [token, setToken] = useState(Cookies.get("userToken") || null);
@@ -28,6 +29,17 @@ function App() {
       <Routes>
         <Route>
           <Route path="/" element={<Home />} />
+          <Route
+            path="/favoris"
+            element={
+              token ? (
+                <Favoris handleToken={handleToken} token={token} />
+              ) : (
+                <Login />
+              )
+            }
+          />
+
           <Route path="/characters" element={<Characters />} />
           <Route path="/character/:id" element={<Character />} />
           <Route path="/comics" element={<Comics />} />

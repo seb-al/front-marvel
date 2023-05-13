@@ -520,6 +520,27 @@ div .form-section {
   gap: 5px;
 }
 
+/*-------FAVORIS------*/
+.container-h {
+  margin: 0 auto;
+  max-width: 750px;
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+.h1-fav {
+  font-size: 30px;
+  font-weight: 600;
+}
+.h1-fav span {
+  color: #d11c1c;
+}
+.h2-fav {
+  font-size: 21px;
+  display: flex;
+  justify-content: center;
+  font-weight: 500;
+}
+
 /*-------FOOTER--------*/
 
 footer {

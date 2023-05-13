@@ -5,6 +5,10 @@ import { Link, useParams } from "react-router-dom";
 const Character = () => {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const [checked, setChecked] = useState(Boolean);
+  if (checked === true) {
+    localStorage.setItem("Favoris", JSON.stringify(data, data.thumbnail));
+  }
 
   const { id } = useParams();
 
@@ -27,6 +31,15 @@ const Character = () => {
     <div className="spinner container-form"></div>
   ) : (
     <>
+      <input
+        id="fav"
+        type="checkbox"
+        onChange={() => {
+          setChecked(!checked);
+        }}
+        checked={checked}
+      />
+      <label htmlFor="Favoris">Ajouter aux favoris</label>
       <div className="container character-page">
         <div>
           <h1 className="title-character">{data.name}</h1>
@@ -69,7 +82,7 @@ const Character = () => {
               </div>
             );
           }
-        })}{" "}
+        })}
       </div>
     </>
   );
