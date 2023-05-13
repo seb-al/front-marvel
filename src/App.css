@@ -541,6 +541,21 @@ div .form-section {
   font-weight: 500;
 }
 
+.fav-button {
+  background-color: rgb(128, 95, 247);
+  color: #fff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.fav-button:hover {
+  opacity: 80%;
+}
+
 /*-------FOOTER--------*/
 
 footer {

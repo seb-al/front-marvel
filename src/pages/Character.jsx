@@ -3,14 +3,20 @@ import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 
 const Character = () => {
+  const { id } = useParams();
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
-  const [checked, setChecked] = useState(Boolean);
+  const [checked, setChecked] = useState(false);
+  const [remove, setRemove] = useState(true);
   if (checked === true) {
-    localStorage.setItem("Favoris", JSON.stringify(data, data.thumbnail));
+    localStorage.setItem(
+      `favorite-${id}`,
+      JSON.stringify(data, data.thumbnail)
+    );
   }
-
-  const { id } = useParams();
+  if (remove === false) {
+    localStorage.removeItem(`favorite-${id}`);
+  }
 
   useEffect(() => {
     const fetchData = async () => {
@@ -31,15 +37,6 @@ const Character = () => {
     <div className="spinner container-form"></div>
   ) : (
     <>
-      <input
-        id="fav"
-        type="checkbox"
-        onChange={() => {
-          setChecked(!checked);
-        }}
-        checked={checked}
-      />
-      <label htmlFor="Favoris">Ajouter aux favoris</label>
       <div className="container character-page">
         <div>
           <h1 className="title-character">{data.name}</h1>
@@ -50,6 +47,27 @@ const Character = () => {
             />
             <div>
               <p>{data.description}</p>
+              {JSON.parse(localStorage.getItem(`Favoris${id}`)) ? (
+                <button
+                  className="fav-button"
+                  onClick={() => {
+                    setRemove(!remove);
+                  }}
+                  value={remove}
+                >
+                  Enlever des favoris
+                </button>
+              ) : (
+                <button
+                  className="fav-button"
+                  onClick={() => {
+                    setChecked(!checked);
+                  }}
+                  value={checked}
+                >
+                  Ajouter à ses favoris
+                </button>
+              )}
             </div>
           </div>
         </div>
