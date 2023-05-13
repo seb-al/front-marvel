@@ -33,7 +33,7 @@ const Login = ({ handleToken, token }) => {
               );
               if (response.data.token) {
                 handleToken(response.data.token);
-                navigate("/");
+                navigate("/favoris");
               }
               // console.log(response.data);
             } catch (error) {

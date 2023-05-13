@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 
 const ComicCard = ({ data }) => {
   const [isFavorite, setIsFavorite] = useState(
-    localStorage.getItem(`favoriteComics-${data._id}`, JSON.stringify(data)) ===
-      "true"
+    localStorage.getItem(`favoriteComics-${data._id}`)
   );
 
   const handleFavoriteClick = () => {

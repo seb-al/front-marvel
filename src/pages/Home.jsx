@@ -14,7 +14,7 @@ const Home = () => {
           Nous avons intégré une API pour vous permettre facilement de retrouver
           vos comics ainsi que vos personnages préférés.
         </h2>
-        <section>
+        <section className="section-616">
           <Link to="/comics">
             <div className="card-home">
               <div className="for-cut">
@@ -38,7 +38,6 @@ const Home = () => {
           </Link>
         </section>
       </main>
-      <Footer></Footer>
     </>
   );
 };

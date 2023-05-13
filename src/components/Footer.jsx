@@ -5,8 +5,7 @@ const Footer = () => {
     <footer>
       <div className="container">
         <div>
-          {" "}
-          <img src={footer} alt="marvel" />{" "}
+          <img src={footer} alt="marvel" />
         </div>
 
         <div>
