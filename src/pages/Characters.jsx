@@ -29,6 +29,7 @@ const Characters = () => {
     <div className="spinner container-form"></div>
   ) : (
     <>
+      <h1 className="title-page container">Personnages</h1>
       <div className="container div-search">
         <input
           className="search-input"

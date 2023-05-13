@@ -42,6 +42,15 @@ a {
 h6 {
   font-size: 30px;
 }
+
+.title-page {
+  font-size: 55px;
+  font-weight: 600;
+  color: rgb(128, 95, 247);
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+}
 /* ----------- HEADER ---------------*/
 
 header img {
@@ -252,7 +261,7 @@ main img {
 }
 
 .div-search {
-  margin-top: 150px;
+  margin-top: 50px;
   max-width: 500px;
   margin-bottom: -80px;
 }
@@ -339,21 +348,6 @@ main img {
   margin-bottom: 100px;
 }
 /*----------CARD-COMICS-------*/
-/*----FAV ICON -----*/
-.fav-icon {
-  position: absolute;
-  font-size: 30px;
-  border: 3px solid black;
-  background-color: white;
-  color: rgb(128, 95, 247);
-  border-radius: 50%;
-  padding: 5px;
-}
-
-.button-fav {
-  border: none;
-  background-color: none;
-}
 
 /*----------CARD-COMICS-------*/
 .card-comics {
@@ -554,6 +548,12 @@ div .form-section {
 
 .fav-button:hover {
   opacity: 80%;
+}
+
+.card-fav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 /*-------FOOTER--------*/

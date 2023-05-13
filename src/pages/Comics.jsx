@@ -30,6 +30,8 @@ const Comics = () => {
     <div className="spinner container-form"></div>
   ) : (
     <>
+      <h1 className="title-page container">Comics</h1>
+
       <div className="container div-search">
         <input
           className="search-input"
