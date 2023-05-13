@@ -1,7 +1,11 @@
 import logo from "../assets/img/marvel.png";
 import { Link } from "react-router-dom";
+import Hamburger from "hamburger-react";
+import { useState, useEffect } from "react";
 
-const Header = ({ handleToken, token, search, setSearch }) => {
+const Header = ({ handleToken, token }) => {
+  const [isOpen, setOpen] = useState(false);
+
   return (
     <header className="container">
       <div>
@@ -41,6 +45,9 @@ const Header = ({ handleToken, token, search, setSearch }) => {
             <button className="connect_button">Se connecter</button>
           </Link>
         )}
+        <div className="display-fullScreen">
+          <Hamburger toggled={isOpen} toggle={setOpen} />
+        </div>
       </nav>
     </header>
   );

@@ -7,7 +7,7 @@ const Character = () => {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [isFavorite, setIsFavorite] = useState(
-    localStorage.getItem(`favorite-${id}`, JSON.stringify(data)) === "true"
+    localStorage.getItem(`favorite-${id}`)
   );
 
   const handleFavoriteClick = () => {

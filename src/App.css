@@ -141,7 +141,16 @@ header p:hover:after {
 .disconect_button:active {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
+.display-fullScreen {
+  display: none;
+}
 
+/*--------RESPONSIVE HEADER ------------*/
+/* @media (max-width: 860px) {
+  .display-fullScreen {
+    display: inline;
+  }
+} */
 /*---------- HOME ------------------*/
 main h1 {
   font-size: 40px;
@@ -537,6 +546,7 @@ div .form-section {
 
 .fav-button {
   background-color: rgb(128, 95, 247);
+  margin-top: 40px;
   color: #fff;
   padding: 12px 24px;
   border: none;
