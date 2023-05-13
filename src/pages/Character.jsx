@@ -6,17 +6,20 @@ const Character = () => {
   const { id } = useParams();
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
-  const [checked, setChecked] = useState(false);
-  const [remove, setRemove] = useState(true);
-  if (checked === true) {
-    localStorage.setItem(
-      `favorite-${id}`,
-      JSON.stringify(data, data.thumbnail)
-    );
-  }
-  if (remove === false) {
-    localStorage.removeItem(`favorite-${id}`);
-  }
+  const [isFavorite, setIsFavorite] = useState(
+    localStorage.getItem(`favorite-${id}`, JSON.stringify(data)) === "true"
+  );
+
+  const handleFavoriteClick = () => {
+    if (isFavorite) {
+      localStorage.removeItem(`favorite-${id}`);
+      setIsFavorite(false);
+    } else {
+      localStorage.setItem(`favorite-${id}`, JSON.stringify(data), true);
+      setIsFavorite(true);
+    }
+    // console.log(isFavorite);
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -47,27 +50,10 @@ const Character = () => {
             />
             <div>
               <p>{data.description}</p>
-              {JSON.parse(localStorage.getItem(`Favoris${id}`)) ? (
-                <button
-                  className="fav-button"
-                  onClick={() => {
-                    setRemove(!remove);
-                  }}
-                  value={remove}
-                >
-                  Enlever des favoris
-                </button>
-              ) : (
-                <button
-                  className="fav-button"
-                  onClick={() => {
-                    setChecked(!checked);
-                  }}
-                  value={checked}
-                >
-                  Ajouter à ses favoris
-                </button>
-              )}
+
+              <button className="fav-button" onClick={handleFavoriteClick}>
+                {isFavorite ? "Retirer des favoris" : "Ajouter aux favoris"}
+              </button>
             </div>
           </div>
         </div>

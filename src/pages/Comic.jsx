@@ -4,10 +4,9 @@ import { useParams } from "react-router-dom";
 import ComicCard from "../components/ComicCard";
 
 const Comic = () => {
+  const { id } = useParams();
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
-
-  const { id } = useParams();
 
   useEffect(() => {
     const fetchData = async () => {

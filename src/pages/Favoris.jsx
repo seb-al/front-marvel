@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Favoris = () => {
-  const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [favorites, setFavorites] = useState([]);
+  const [favoritesComics, setFavoritesComics] = useState([]);
 
   useEffect(() => {
     const keys = Object.keys(localStorage);
@@ -13,11 +13,14 @@ const Favoris = () => {
       .filter((key) => key.startsWith("favorite-"))
       .map((key) => JSON.parse(localStorage.getItem(key)));
 
-    setData(data);
+    const favoritesListComic = keys
+      .filter((key) => key.startsWith("favoriteComics-"))
+      .map((key) => JSON.parse(localStorage.getItem(key)));
+
+    setFavoritesComics(favoritesListComic);
     setFavorites(favoritesList);
     setIsLoading(false);
-    console.log(data);
-    console.log(favorites);
+    // console.log(favoritesListComic);
   }, []);
   return isLoading ? (
     <div className="spinner container-form"></div>
@@ -27,8 +30,9 @@ const Favoris = () => {
         Ici vous retrouverez vos personnages et comcis <span>favoris</span>.
       </h1>
       <h2 className="h2-fav container-h">Personnages :</h2>
-      {favorites.map((data, index) => (
-        <Link key={index} to={`/character/${data._id}`}>
+
+      {favorites.map((data) => (
+        <Link key={data._id} to={`/character/${data._id}`}>
           <div className="card-characters container-form">
             <div className="for-cut-characters">
               <img
@@ -43,8 +47,25 @@ const Favoris = () => {
           </div>
         </Link>
       ))}
-
       <h2 className="h2-fav container-h">Comics :</h2>
+      {favoritesComics.map((comic) => {
+        return (
+          <Link key={comic._id} to={`/comic/${comic._id}`}>
+            <div className="card-comics">
+              <div className="for-cut-comics">
+                <img
+                  src={comic.thumbnail.path + "." + comic.thumbnail.extension}
+                  alt={comic.title}
+                />
+              </div>
+              <div className="characters-title-desc">
+                <h3>{comic.title}</h3>
+                <p>{comic.description}</p>
+              </div>
+            </div>
+          </Link>
+        );
+      })}
     </>
   );
 };
