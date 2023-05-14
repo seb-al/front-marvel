@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useEffect, useState, React } from "react";
+import { React } from "react";
 
 const ComicCard = ({ data }) => {
   return (

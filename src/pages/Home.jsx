@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import comics from "../assets/img/comics.jpg";
 import characters from "../assets/img/characters.jpg";
-import Footer from "../components/Footer";
 
 const Home = () => {
   return (

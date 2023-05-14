@@ -29,6 +29,7 @@ const Favoris = () => {
         Ici vous retrouverez vos personnages et comcis <span>favoris</span>.
       </h1>
       <h2 className="h2-fav container-h">Personnages :</h2>
+
       <div className="card-fav container">
         {favorites.map((data) => (
           <Link key={data._id} to={`/character/${data._id}`}>
@@ -47,6 +48,7 @@ const Favoris = () => {
           </Link>
         ))}
       </div>
+
       <h2 className="h2-fav container-h">Comics :</h2>
       <div className="card-fav container">
         {favoritesComics.map((comic) => {

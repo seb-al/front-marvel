@@ -237,16 +237,17 @@ a:hover {
   .section-616 {
     display: flex;
     gap: 70px;
-    margin-left: 80px;
+    margin-left: 20px;
+    margin-bottom: 20px;
   }
   .div-search {
-    margin-left: 80px;
+    margin-left: 20px;
   }
   .title-page {
-    margin-left: 80px;
+    margin-left: 10px;
   }
   .page-characters {
-    margin-left: 90px;
+    margin-left: 50px;
   }
   .character-page .title-character {
     width: 370px;
@@ -271,10 +272,10 @@ a:hover {
     margin-left: -50px;
   }
   .card-chara-id {
-    margin-left: 80px;
+    margin-left: 55px;
   }
   .card-fav {
-    margin-left: 80px;
+    margin-left: 55px;
   }
   .card-comics {
     margin-left: 0px;

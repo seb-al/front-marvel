@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Pages from "../components/Pages";
-import { FaRegStar } from "react-icons/fa";
-import Cookies from "js-cookie";
 
 const Comics = () => {
   const [title, setTitle] = useState("");
